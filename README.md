@@ -79,6 +79,36 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > intitle:"index of " "config/db" site:example.com
 
+> site:example.com intitle:index.of
+
+> site:example.com ext:xml | ext:conf | ext:cnf | ext:reg | ext:inf | ext:rdp | ext:cfg | ext:txt | ext:ora | ext:ini
+
+> site:example.com ext:sql | ext:dbf | ext:mdb
+
+> site:example.com inurl:wp- | inurl:wp-content | inurl:plugins | inurl:uploads | inurl:themes | inurl:download
+
+> site:example.com ext:bkf | ext:bkp | ext:bak | ext:old | ext:backup
+
+> site:example.com intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
+
+> site:*.*.example.com
+
+> site:*.example.com
+
+> site:example.com inurl:"/phpinfo.php" | inurl:".htaccess" | inurl:"/.git"  -github
+
+> site:example.com ext:action | ext:struts | ext:do
+
+> site:example.com inurl:readme | inurl:license | inurl:install | inurl:setup | inurl:config
+
+> site:example.com inurl:shell | inurl:backdoor | inurl:wso | inurl:cmd | shadow | passwd | boot.ini | inurl:backdoor
+
+> site:example.com ext:php intitle:phpinfo "published by the PHP Group"
+
+> site:example.com ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv
+
+> inurl:example.com ext:swf
+
 > inurl:"/private" intext:"index of /" "config"  site:example.com
 
 > intitle:"index of" "config.php"  site:example.com
@@ -97,7 +127,10 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com intext:"sql syntax near"
 
-> site:example.com intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
+> site:example.com intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
+
+
+
 
 > site:example.com intext:"sql syntax near" |  intext:"incorrect syntax near"
 
@@ -245,7 +278,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### Open Redirect prone parameters
 
-> inurl:url= | inurl:return= | inurl:next= | inurl:redir= inurl:http site:example.com
+> inurl:url= | inurl:redirect | inurl:src=http | inurl:r=http | inurl:return= | inurl:next= | inurl:redir= | inurl:http site:example.com
 
 ### SQLi Prone Parameters
 
