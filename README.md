@@ -25,15 +25,185 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:"example[.]com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess
 
+> site:"example[.]com" ext:pdf "username|user|pass|password|email|id"
+
+> site:example.com ext:pdf "confidential"
+
+> site:example.com ext:pdf "for internal use only"
+
+> site:example.com ext:pdf "private"
+
+> site:example.com ext:pdf "sensetive"
+
+> site:example.com filename:.env
+
+> site:example.com jdbc 
+
+> site:example.com intitle:"index of" ext:sql|xls|xml|json|csv
+
+> site:example.com "MYSQL_ROOT_PASSWORD:" ext:env OR ext:yml -git
+
+> site:example.com inurl:admin filetype:db
+
+> site:example.com inurl:"*admin | login" | inurl:.php | .asp
+
+> filetype:log site:example.com
+
+> inurl:passwd filetype:txt site:example.com
+
+> intitle:"index of /*" site:example.com
+
+> intitle:"index of /" (passwd | password.txt) site:example.com
+
+> intitle:"index of /password" site:example.com
+
+> intitle:"index of /admin" site:example.com
+
+> intitle:"index of /" Parent Directory site:example.com
+
+> site:example.com ext:txt | ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv | ext:mdb
+
+> intitle:"login" "admin" site:example.com
+
+> site:example.com inurl:admin | administrator | adm | login | wp-login
+
+> password filetype:docx site:example.com
+
+> "index of /" */* site:example.com
+
+> db_password filetype:env site:example.com
+
+> intext:"index of /.git" "parent directory" site:example.com
+
+> intitle:"index of" "properties.json" site:example.com
+
+> intitle:"index of " "config/db" site:example.com
+
+> inurl:"/private" intext:"index of /" "config"  site:example.com
+
+> intitle:"index of" "config.php"  site:example.com
+
+> intext:"index of /" ".ovpn" site:example.com
+
+> intitle:"index of /" "styleci.yml" ".env" site:example.com
+
+> intitle:"index of /" "docker-compose.yml" ".env" site:example.com
+
+> intext:"index of" downloads" site:example.com
+
+> inurl: "phpmyadmin/setup/" site:example.com
+
+> intitle:"index of "conf.json" site:example.com
+
+> intitle:"index of "application.yml" site:example.com
+
+> inurl:adminpanel site:example.com
+
+> intitle:"index of" inurl:admin/php site:example.com
+
+> inurl:"phpmyadmin/setup/" site:example.com
+
+> inurl:ssh intitle:index of /files site:example.com
+
+> intitle:"index of" "database.sql" site:example.com
+
+> intext:"index of" smb.conf site:example.com
+
+> intitle:"index of" inurl:wp-json index.json site:example.com
+
+> intext:"index of" "config" site:example.com
+
+> intitle:"index of /" intext:.db site:example.com
+
+> intitle:index of "wc.db" site:example.com
+
+> intext:"index of" ".git" site:example.com
+
+> site:example.com intext:login intext:username intext:password
+
+> site:example.com ext:ppt intext:password
+
+> site:example.com filetype:xls inurl:"email.xls"
+
+> allintext:username filetype:log site:example.com
+
+> inurl:/proc/self/cwd site:example.com
+
+> "index of" "database.sql.zip" site:example.com
+
+> intitle:"index of" "WebServers.xml" site:example.com
+
+> filetype:xls inurl:"email.xls" site:example.com
+
+> intitle:"Index of" wp-admin site:example.com
+
+> intitle:"index of" "admin/sql/" site:example.com
+
+> intitle:"index of" "system/config" site:example.com
+
+> site:example.com inurl:admin "@gmail.com"
+
+> inurl:zoom.us/j and intext:scheduled for site:example.com
+
+> allintitle:restricted filetype:doc site:example.com
+
+> inurl:Dashboard.jspa intext:"Atlassian Jira Project Management Software" site:example.com
+
+> filetype:txt site:example.com
+
 ### Code Leaks
 
-> site:pastebin.com "example.com"
+> inurl:gitlab "example.com"
 
-> site:jsfiddle.net "example.com"
+> site:atlassian.net "example.com"
+
+> site:bitbucket.org "example.com"
 
 > site:codebeautify.org "example.com"
 
+> site:codepad.co "example.com"
+
 > site:codepen.io "example.com"
+
+> site:codeshare.io "example.com"
+
+> site:coggle.it "example.com"
+
+> site:gitter.im "example.com"
+
+> site:google.com "example.com"
+
+> site:jsdelivr.net "example.com"
+
+> site:jsfiddle.net "example.com"
+
+> site:libraries.io "example.com"
+
+> site:npm.runkit.com "example.com"
+
+> site:npmjs.com "example.com"
+
+> site:papaly.com "example.com"
+
+> site:pastebin.com "example.com"
+
+> site:prezi.com "example.com"
+
+> site:productforums.google.com "example.com"
+
+> site:repl.it "example.com"
+
+> site:scribd.com "example.com"
+
+> site:sharecode.io "example.com"
+
+> site:trello.com "example.com"
+
+> site:ycombinator.com "example.com"
+
+> site:zoom.us inurl:"example.com"
+
+> inurl:https://trello.com AND intext:example.com
 
 ### Cloud Storage
 
@@ -45,23 +215,23 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:drive.google.com "example.com"
 
-> site:dev.azure.com "example[.]com"
+> site:dev.azure.com "example.com"
 
-> site:onedrive.live.com "example[.]com"
+> site:onedrive.live.com "example.com"
 
-> site:digitaloceanspaces.com "example[.]com"
+> site:digitaloceanspaces.com "example.com"
 
-> site:sharepoint.com "example[.]com"
+> site:sharepoint.com "example.com"
 
-> site:s3-external-1.amazonaws.com "example[.]com"
+> site:s3-external-1.amazonaws.com "example.com"
 
-> site:s3.dualstack.us-east-1.amazonaws.com "example[.]com"
+> site:s3.dualstack.us-east-1.amazonaws.com "example.com"
 
-> site:dropbox.com/s "example[.]com"
+> site:dropbox.com/s "example.com"
 
-> site:box.com/s "example[.]com"
+> site:box.com/s "example.com"
 
-> site:docs.google.com inurl:"/d/" "example[.]com"
+> site:docs.google.com inurl:"/d/" "example.com"
 
 ### XSS prone parameters
 
@@ -97,11 +267,11 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### JFrog Artifactory
 
-> site:jfrog.io "example[.]com"
+> site:jfrog.io "example.com"
 
 ### Firebase
 
-> site:firebaseio.com "example[.]com"
+> site:firebaseio.com "example.com"
 
 ### API Docs
 
@@ -109,7 +279,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### File upload endpoints
 
-> site:example.com ”choose file”
+> site:example.com "choose file"
 
 ## Dorks that work better w/o domain
 
