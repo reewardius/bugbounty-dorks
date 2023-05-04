@@ -245,6 +245,12 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= inurl:& site:example.com
 
+> site:example.com intext:"sql syntax near"
+
+>  site:example.com intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
+
+> site:example.com intext:"sql syntax near" |  intext:"incorrect syntax near"
+
 ### SSRF Prone Parameters
 
 > inurl:http | inurl:url= | inurl:path= | inurl:dest= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= inurl:& site:example.com
