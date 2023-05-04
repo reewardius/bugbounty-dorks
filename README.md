@@ -23,9 +23,9 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### Juicy Extensions
 
-> site:"example[.]com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess
+> site:"example.com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess
 
-> site:"example[.]com" ext:pdf "username|user|pass|password|email|id"
+> site:"example.com" ext:pdf "username|user|pass|password|email|id"
 
 > site:example.com ext:pdf "confidential"
 
@@ -298,11 +298,11 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### High % inurl keywords
 
-> inurl:config | inurl:env | inurl:setting | inurl:backup | inurl:admin | inurl:php site:example[.]com
+> inurl:config | inurl:env | inurl:setting | inurl:backup | inurl:admin | inurl:php site:example.com
 
 ### Sensitive Parameters
 
-> inurl:email= | inurl:phone= | inurl:password= | inurl:secret= inurl:& site:example[.]com
+> inurl:email= | inurl:phone= | inurl:password= | inurl:secret= inurl:& site:example.com
 
 ### JFrog Artifactory
 
@@ -314,7 +314,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### API Docs
 
-> inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer site:"example[.]com"
+> inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer site:"example.com"
 
 ### File upload endpoints
 
