@@ -95,6 +95,12 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > intitle:"index of "conf.json" site:example.com
 
+> site:example.com intext:"sql syntax near"
+
+>  site:example.com intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
+
+> site:example.com intext:"sql syntax near" |  intext:"incorrect syntax near"
+
 > intitle:"index of "application.yml" site:example.com
 
 > inurl:adminpanel site:example.com
@@ -244,12 +250,6 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 ### SQLi Prone Parameters
 
 > inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= inurl:& site:example.com
-
-> site:example.com intext:"sql syntax near"
-
->  site:example.com intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
-
-> site:example.com intext:"sql syntax near" |  intext:"incorrect syntax near"
 
 ### SSRF Prone Parameters
 
