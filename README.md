@@ -39,6 +39,106 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com jdbc 
 
+> site:example.com Index of /.svn
+
+> site:example.com intitle:"index of" "users.yml" | "admin.yml" | "config.yml"
+
+> site:example.com intext:"Index of" intext:"backup.tar"
+
+> site:example.com inurl:"wp-content" intitle:"index.of" intext:backup"
+
+> site:example.com intext:"Index of" intext:"backup.tar"
+
+> site:example.com intitle:"index of" "config.php"
+
+> site:example.com inurl:"/private" intext:"index of /" "config"
+
+> site:example.com intitle:"index of " "config/db"
+
+> site:example.com intitle:"index of /" "docker-compose.yml" ".env"
+
+> site:example.com intext:"index of /" ".ovpn"
+
+> site:example.com intitle:"index of /" "public.zip"
+
+> site:example.com intitle:"index of /" "admin.zip" "admin/"
+
+> site:example.com intitle:"index of "conf.json"
+
+> site:example.com intitle:"index of "application.yml"
+
+> site:example.com inurl:ssh intitle:index of /files
+
+> site:example.com intitle:"index of" "database.sql"
+
+> site:example.com intext:"index of" smb.conf
+
+> site:example.com index of:admin.asp
+
+> site:example.com intext:"index of" "config"
+
+> site:example.com intitle:"index of /" intext:".db
+
+> site:example.com intitle:index of "wc.db"
+
+> site:example.com intitle: index of /secrets/
+
+> site:example.com intext:"index of" ".git"
+
+> site:example.com intitle:"index of /database/migrations"
+
+> site:example.com intext:"index of" ".sql"
+
+> site:example.com intext:"index of" "phpMyAdmin"
+
+> site:example.com intitle:Index of "/venv"
+
+> site:example.com inurl:"admin/default.aspx"
+
+> site:example.com inurl: /wp-includes/uploads
+
+> site:example.com intitle:"index of" "release.sh"
+
+> site:example.com intitle:"index of" "setup.sh"
+
+> site:example.com intitle:"index of" "configure.sh"
+
+> site:example.com intitle:"index of" "deploy.sh"
+
+> site:example.com intitle:"index of /" intext:".env"
+
+> site:example.com intext:"Index of" intext:"bitbucket-pipelines.yml"
+
+> site:example.com inurl:/admin ext:config
+
+> site:example.com intitle:"index of" "db.py"
+
+> site:example.com intitle:"index of "cloud-config.yml"
+
+> site:example.com index of /wp-admin.zip
+
+> site:example.com intitle:"index of" aws/
+
+> site:example.com intitle:"index of" "catalina.out"
+
+> site:example.com "index of" error_logs
+
+> site:example.com intitle:"index of" "java.log" | "java.logs"
+
+> site:example.com intext:"token" filetype:log "authenticate"
+
+> site:example.com intitle:index of ./jira-software
+
+> site:example.com intitle:index of "aws/credentials"
+
+> site:example.com intitle:"index of" *.xls
+
+> site:example.com db_password filetype:env
+
+> site:example.com intitle:index of settings.py
+
+> site:example.com inurl:admin filetype:txt
+
 > site:example.com intitle:"index of" ext:sql|xls|xml|json|csv
 
 > site:example.com "MYSQL_ROOT_PASSWORD:" ext:env OR ext:yml -git
@@ -274,33 +374,49 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### XSS prone parameters
 
-> inurl:q= | inurl:s= | inurl:search= | inurl:query= inurl:& site:example.com
+> inurl:lang= | inurl:name= | inurl:view= | inurl:name= | inurl:callback= | inurl:id= | inurl:q= | inurl:s= | inurl:search= | inurl:page= | inurl:query= inurl:& site:*.*.example.com
+
+> inurl:lang= | inurl:name= | inurl:view= | inurl:name= | inurl:callback= | inurl:id= | inurl:q= | inurl:s= | inurl:search= | inurl:page= | inurl:query= inurl:& site:example.com
 
 ### Open Redirect prone parameters
 
-> inurl:url= | inurl:redirect | inurl:src=http | inurl:r=http | inurl:return= | inurl:next= | inurl:redir= | inurl:http site:example.com
+> inurl:page= | inurl:next= | inurl:host= | inurl:go= | inurl:goto= | inurl:file= | inurl:host= | inurl:redirect_to= | inurl:url= | inurl:redirect | inurl:src=http | inurl:r=http | inurl:return= | inurl:next= | inurl:redir= | inurl:http site:*.*.example.com
+
+> inurl:page= | inurl:next= | inurl:host= | inurl:go= | inurl:goto= | inurl:file= | inurl:host= | inurl:redirect_to= | inurl:url= | inurl:redirect | inurl:src=http | inurl:r=http | inurl:return= | inurl:next= | inurl:redir= | inurl:http site:example.com
 
 ### SQLi Prone Parameters
+
+> inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= inurl:& site:*.*.example.com
 
 > inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= inurl:& site:example.com
 
 ### SSRF Prone Parameters
 
+> inurl:http | inurl:url= | inurl:path= | inurl:dest= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= inurl:& site:*.*.example.com
+
 > inurl:http | inurl:url= | inurl:path= | inurl:dest= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= inurl:& site:example.com
 
 ### LFI Prone Parameters
+
+> inurl:include | inurl:dir | inurl:detail= | inurl:file= | inurl:folder= | inurl:inc= | inurl:locate= | inurl:doc= | inurl:conf= inurl:& site:*.*.example.com
 
 > inurl:include | inurl:dir | inurl:detail= | inurl:file= | inurl:folder= | inurl:inc= | inurl:locate= | inurl:doc= | inurl:conf= inurl:& site:example.com
 
 ### RCE Prone Parameters
 
+> inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read=  | inurl:ping= inurl:& site:*.*.example.com
+
 > inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read=  | inurl:ping= inurl:& site:example.com
 
 ### High % inurl keywords
 
+> inurl:config | inurl:env | inurl:setting | inurl:backup | inurl:admin | inurl:php site:*.*.example.com
+
 > inurl:config | inurl:env | inurl:setting | inurl:backup | inurl:admin | inurl:php site:example.com
 
 ### Sensitive Parameters
+
+> inurl:email= | inurl:phone= | inurl:password= | inurl:secret= inurl:& site:*.*.example.com
 
 > inurl:email= | inurl:phone= | inurl:password= | inurl:secret= inurl:& site:example.com
 
