@@ -23,9 +23,13 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### Juicy Extensions
 
-> site:"example.com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess
+> site:"example.com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess | ext:sql
 
-> site:"example.com" ext:pdf "username|user|pass|password|email|id"
+> site:"example.com" ext:env | ext:git | ext:.git-credentials | ext:yaml | ext:yml | ext:ppk | ext:pem | ext:json | ext:cfg | ext:xml | ext:ps1
+
+> site:"example.com" filename:connections.xml | filename:config.php | filename:config.json
+
+> site:"example.com" ext:pdf "username|user|pass|password|email|id|sensetive|internal"
 
 > site:example.com ext:pdf "confidential"
 
