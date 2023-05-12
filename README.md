@@ -233,9 +233,6 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
 
-
-
-
 > site:example.com intext:"sql syntax near" |  intext:"incorrect syntax near"
 
 > intitle:"index of "application.yml" site:example.com
@@ -293,6 +290,18 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 > inurl:Dashboard.jspa intext:"Atlassian Jira Project Management Software" site:example.com
 
 > filetype:txt site:example.com
+
+### App frameworks and their exposures
+
+> site:example.com "Whoops! There was an error."
+
+> site:example.com inurl:/frontend_dev.php/$
+
+> site:example.com "SF_ROOT_DIR"
+
+> site:example.com Application Trace + nil:NilClass (10%) TBD
+
+> site:example.com "unexpected error" OR "Uncaught Exception" OR "fatal error" OR "Unknown column" OR "exception occurred"
 
 ### Code Leaks
 
