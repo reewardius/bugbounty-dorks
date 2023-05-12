@@ -1,5 +1,7 @@
 # bugbounty-dorks
 
+Web Application https://reewardius.github.io/bugbounty-dorks/
+
 # Google Dorks for Bug Bounty
 
 A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
