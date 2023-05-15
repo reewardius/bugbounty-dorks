@@ -313,6 +313,8 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:atlassian.net "example.com"
 
+> site:atlassian.net inurl:/servicedesk/customer/user/login "example.com"
+
 > site:bitbucket.org "example.com"
 
 > site:codebeautify.org "example.com"
@@ -384,6 +386,8 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 > site:s3.dualstack.us-east-1.amazonaws.com "example.com"
 
 > site:dropbox.com/s "example.com"
+
+> inurl:www.dropbox.com/s/ "example.com"
 
 > site:box.com/s "example.com"
 
