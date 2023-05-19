@@ -311,6 +311,8 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > inurl:gitlab "example.com"
 
+> site:http://box.com "example.com"
+
 > site:atlassian.net "example.com"
 
 > site:atlassian.net inurl:/servicedesk/customer/user/login "example.com"
