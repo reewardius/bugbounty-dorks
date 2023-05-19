@@ -313,6 +313,8 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:http://box.com "example.com"
 
+> inurl:gitlab "example.com"
+
 > site:atlassian.net "example.com"
 
 > site:atlassian.net inurl:/servicedesk/customer/user/login "example.com"
@@ -442,6 +444,56 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 > inurl:email= | inurl:phone= | inurl:password= | inurl:secret= inurl:& site:*.*.example.com
 
 > inurl:email= | inurl:phone= | inurl:password= | inurl:secret= inurl:& site:example.com
+
+# DS
+
+> site:codepad.co "example.com"
+
+> site:scribd.com "example.com"
+
+> site:npmjs.com "example.com"
+
+> site:npm.runkit.com "example.com"
+
+> site:libraries.io "example.com"
+
+> site:ycombinator.com "example.com"
+
+> site:coggle.it "example.com"
+
+> site:papaly.com "example.com"
+
+> site:google.com "example.com"
+
+> site:trello.com "example.com"
+
+> site:prezi.com "example.com"
+
+> site:jsdelivr.net "example.com"
+
+> site:codepen.io "example.com"
+
+> site:codeshare.io "example.com"
+
+> site:sharecode.io "example.com"
+
+> site:pastebin.com "example.com"
+
+> site:repl.it "example.com"
+
+> site:productforums.google.com "example.com"
+
+> site:gitter.im "example.com"
+
+> site:bitbucket.org "example.com"
+
+> site:bitbucket.org inurl:example.com
+
+> site:zoom.us inurl:"example.com"
+
+> site:atlassian.net "example.com"
+
+> site:s3.amazonaws.com inurl:"example.com"
 
 ### JFrog Artifactory
 
