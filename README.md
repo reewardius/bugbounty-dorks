@@ -495,46 +495,15 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:s3.amazonaws.com inurl:"example.com"
 
-### JFrog Artifactory
-
 > site:jfrog.io "example.com"
 
-### Firebase
-
 > site:firebaseio.com "example.com"
-
-### API Docs
 
 > inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer site:"example.com"
 
 ### File upload endpoints
 
 > site:example.com "choose file"
-
-## Dorks that work better w/o domain
-
-### Bug Bounty programs and Vulnerability Disclosure Programs
-
-> "submit vulnerability report" | "powered by bugcrowd" | "powered by hackerone"
-
-> site:*/security.txt "bounty"
-
-### Apache Server Status Exposed
-
-> site:*/server-status apache
-
-### WordPress
-
-> inurl:/wp-admin/admin-ajax.php
-
-### Drupal
-
-> intext:"Powered by" & intext:Drupal & inurl:user
-
-### Joomla
-
-> site:*/joomla/login
-
 
 ---
 
