@@ -493,7 +493,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:atlassian.net "example.com"
 
-> site:s3.amazonaws.com inurl:"example.com"
+> site:s3.amazonaws.com intext:example.com
 
 > site:jfrog.io "example.com"
 
