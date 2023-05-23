@@ -15,9 +15,17 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com -www -shop -share -ir -mfa
 
+### SQL Injection Errors
+
+> site:example.com intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
+
 ### PHP extension w/ parameters
 
 > site:example.com ext:php inurl:?
+
+### Java extension w/ parameters
+
+> site:example.com ext:jsp ext:do ext:action inurl:?
 
 ### Disclosed XSS and Open Redirects
 
@@ -196,8 +204,6 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 > site:example.com inurl:wp- | inurl:wp-content | inurl:plugins | inurl:uploads | inurl:themes | inurl:download
 
 > site:example.com ext:bkf | ext:bkp | ext:bak | ext:old | ext:backup
-
-> site:example.com intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
 
 > site:*.*.example.com
 
