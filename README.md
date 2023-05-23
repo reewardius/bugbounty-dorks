@@ -27,6 +27,10 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com ext:jsp OR ext:do OR ext:action inurl:?
 
+### NET extension w/ parameters
+
+> site:example.com ext:aspx OR ext:asa OR ext:asp OR ext:asax inurl:?
+
 ### Disclosed XSS and Open Redirects
 
 > site:openbugbounty.org inurl:reports intext:"example.com"
