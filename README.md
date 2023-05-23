@@ -25,7 +25,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### Java extension w/ parameters
 
-> site:example.com ext:jsp ext:do ext:action inurl:?
+> site:example.com ext:jsp OR ext:do OR ext:action inurl:?
 
 ### Disclosed XSS and Open Redirects
 
