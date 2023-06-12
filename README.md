@@ -6,7 +6,7 @@ Web Application https://reewardius.github.io/bugbounty-dorks/
 
 A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
-[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/reewardius.svg?style=social&label=Follow%20%40reewardius)](https://twitter.com/TakSec)
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/reewardius.svg?style=social&label=Follow%20%40reewardius)](https://twitter.com/reewardius)
 </p>
 
 ---
