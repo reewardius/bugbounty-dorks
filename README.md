@@ -317,6 +317,8 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com "unexpected error" OR "Uncaught Exception" OR "fatal error" OR "Unknown column" OR "exception occurred"
 
+> site:example.com employee offers 
+
 ### Code Leaks
 
 > inurl:gitlab "example.com"
