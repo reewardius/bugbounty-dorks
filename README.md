@@ -37,11 +37,11 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### Juicy Extensions
 
-> site:"example.com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess | ext:sql | ext:csv
-
-> site:"example.com" ext:env | ext:git | ext:.git-credentials | ext:yaml | ext:yml | ext:ppk | ext:pem | ext:json | ext:cfg | ext:xml | ext:ps1
+> site:"example.com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess | ext:sql | ext:csv | ext:.git-credentials | ext:yaml | ext:yml | ext:ppk | ext:pem | ext:json | ext:cfg | ext:xml | ext:ps1
 
 > site:"example.com" filename:connections.xml | filename:config.php | filename:config.json
+
+> site:"example.com" ext:jsp | ext:asp | ext:php | ext:aspx | ext:pl | ext:cfm | ext:py | ext:rb
 
 > site:"example.com" ext:pdf "username|user|pass|password|email|id|sensetive|internal"
 
@@ -411,9 +411,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### XSS prone parameters
 
-> inurl:lang= | inurl:name= | inurl:view= | inurl:name= | inurl:callback= | inurl:id= | inurl:q= | inurl:s= | inurl:search= | inurl:page= | inurl:query= inurl:& site:*.*.example.com
-
-> inurl:lang= | inurl:name= | inurl:view= | inurl:name= | inurl:callback= | inurl:id= | inurl:q= | inurl:s= | inurl:search= | inurl:page= | inurl:query= inurl:& site:example.com
+> inurl:lang= | inurl:name= | inurl:view= | inurl:name= | inurl:callback= | inurl:id= | inurl:q= | inurl:s= | inurl:keyword= | inurl:search= | inurl:page= | inurl:query= inurl:& site:example.com
 
 ### Open Redirect prone parameters
 
@@ -452,8 +450,6 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 > inurl:config | inurl:env | inurl:setting | inurl:backup | inurl:admin | inurl:php site:example.com
 
 ### Sensitive Parameters
-
-> inurl:email= | inurl:phone= | inurl:password= | inurl:secret= inurl:& site:*.*.example.com
 
 > inurl:email= | inurl:phone= | inurl:password= | inurl:secret= inurl:& site:example.com
 
