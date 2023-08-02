@@ -427,9 +427,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### SSRF Prone Parameters
 
-> inurl:http | inurl:url= | inurl:path= | inurl:dest= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= inurl:& site:*.*.example.com
-
-> inurl:http | inurl:url= | inurl:path= | inurl:dest= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= inurl:& site:example.com
+> inurl:http | inurl:resource | inurl:resources | inurl:url= | inurl:path= | inurl:dest= | inurl:proxy= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= inurl:& site:example.com
 
 ### LFI Prone Parameters
 
