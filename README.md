@@ -18,10 +18,6 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess site:example.com
 
-### 🐘 Fast PHP Dork
-
-> ext:php inurl:? site:example.com
-
 ### Broad domain search w/ negative search
 
 > site:example.com -www -shop -share -ir -mfa
