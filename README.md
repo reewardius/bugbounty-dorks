@@ -10,10 +10,6 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 </p>
 
 ---
-### 🐘 Fast PHP Dork
-
-> ext:php inurl:? site:example.com
-
 ### Error Pages
 
 > intext:"error" | intext:"exception" | intext:"not found" | intext:"failed" site:example.com
@@ -21,6 +17,10 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 ### Juicy Extensions
 
 > ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess site:example.com
+
+### 🐘 Fast PHP Dork
+
+> ext:php inurl:? site:example.com
 
 ### Broad domain search w/ negative search
 
