@@ -511,19 +511,11 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer site:"example.com"
 
-### File upload endpoints
-
-> site:example.com "choose file"
-
-### Login/Logon Pages
-
-site:example.com inurl:login | inurl:logon | inurl:sign-in | inurl:signin | inurl:portal
-
-### Error Pages
-
 > intext:"error" | intext:"exception" | intext:"not found" | intext:"failed" site:example.com
 
+> site:example.com inurl:login | inurl:logon | inurl:sign-in | inurl:signin | inurl:portal
 
+> site:example.com "choose file"
 ---
 
 Medium articles for more dorks:
