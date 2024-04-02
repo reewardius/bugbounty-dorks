@@ -47,7 +47,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:"example.com" ext:jsp | ext:asp | ext:php | ext:aspx | ext:pl | ext:cfm | ext:py | ext:rb
 
-> site:"example.com" ext:pdf "username|user|pass|password|email|id|sensetive|internal"
+> site:"example.com" ext:pdf "username|user|pass|password|email|id|sensitive|internal"
 
 > site:example.com ext:pdf "confidential"
 
@@ -55,7 +55,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com ext:pdf "private"
 
-> site:example.com ext:pdf "sensetive"
+> site:example.com ext:pdf "sensitive"
 
 > site:example.com filename:.env
 
