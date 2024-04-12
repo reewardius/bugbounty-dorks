@@ -10,304 +10,81 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 </p>
 
 ---
-
-### Juicy Extensions
-
-> ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess site:example.com
-
 ### Broad domain search w/ negative search
 
-> site:example.com -www -shop -share -ir -mfa
+> site:example.com -www -shop
 
-### SQL Injection Errors
+### Login Pages
 
-> site:example.com intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
-
-### PHP extension w/ parameters
-
-> site:example.com ext:php inurl:?
-
-### Java extension w/ parameters
-
-> site:example.com ext:jsp OR ext:do OR ext:action inurl:?
-
-### NET extension w/ parameters
-
-> site:example.com ext:aspx OR ext:asa OR ext:asp OR ext:asax inurl:?
-
-### Disclosed XSS and Open Redirects
-
-> site:openbugbounty.org inurl:reports intext:"example.com"
-
-### Juicy Extensions
-
-> site:"example.com" ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess | ext:sql | ext:csv | ext:.git-credentials | ext:yaml | ext:yml | ext:ppk | ext:pem | ext:json | ext:cfg | ext:xml | ext:ps1
-
-> site:"example.com" filename:connections.xml | filename:config.php | filename:config.json
-
-> site:"example.com" ext:jsp | ext:asp | ext:php | ext:aspx | ext:pl | ext:cfm | ext:py | ext:rb
-
-> site:"example.com" ext:pdf "username|user|pass|password|email|id|sensitive|internal"
-
-> site:example.com ext:pdf "confidential"
-
-> site:example.com ext:pdf "for internal use only"
-
-> site:example.com ext:pdf "private"
-
-> site:example.com ext:pdf "sensitive"
-
-> site:example.com filename:.env
-
-> site:example.com extension:csv admin
-
-> site:example.com jdbc 
-
-> site:example.com Index of /.svn
-
-> site:example.com intitle:"index of" "users.yml" | "admin.yml" | "config.yml"
-
-> site:example.com intext:"Index of" intext:"backup.tar"
-
-> site:example.com inurl:"wp-content" intitle:"index.of" intext:backup"
-
-> site:example.com intext:"Index of" intext:"backup.tar"
-
-> site:example.com intitle:"index of" "config.php"
-
-> site:example.com inurl:"/private" intext:"index of /" "config"
-
-> site:example.com intitle:"index of " "config/db"
-
-> site:example.com intitle:"index of /" "docker-compose.yml" ".env"
-
-> site:example.com intext:"index of /" ".ovpn"
-
-> site:example.com intitle:"index of /" "public.zip"
-
-> site:example.com intitle:"index of /" "admin.zip" "admin/"
-
-> site:example.com intitle:"index of "conf.json"
-
-> site:example.com intitle:"index of "application.yml"
-
-> site:example.com inurl:ssh intitle:index of /files
-
-> site:example.com intitle:"index of" "database.sql"
-
-> site:example.com intext:"index of" smb.conf
-
-> site:example.com index of:admin.asp
-
-> site:example.com intext:"index of" "config"
-
-> site:example.com intitle:"index of /" intext:".db
-
-> site:example.com intitle:index of "wc.db"
-
-> site:example.com intitle: index of /secrets/
-
-> site:example.com intext:"index of" ".git"
-
-> site:example.com intitle:"index of /database/migrations"
-
-> site:example.com intext:"index of" ".sql"
-
-> site:example.com intext:"index of" "phpMyAdmin"
-
-> site:example.com intitle:Index of "/venv"
-
-> site:example.com inurl:"admin/default.aspx"
-
-> site:example.com inurl: /wp-includes/uploads
-
-> site:example.com intitle:"index of" "release.sh"
-
-> site:example.com intitle:"index of" "setup.sh"
-
-> site:example.com intitle:"index of" "configure.sh"
-
-> site:example.com intitle:"index of" "deploy.sh"
-
-> site:example.com intitle:"index of /" intext:".env"
-
-> site:example.com intext:"Index of" intext:"bitbucket-pipelines.yml"
-
-> site:example.com inurl:/admin ext:config
-
-> site:example.com intitle:"index of" "db.py"
-
-> site:example.com intitle:"index of "cloud-config.yml"
-
-> site:example.com index of /wp-admin.zip
-
-> site:example.com intitle:"index of" aws/
-
-> site:example.com intitle:"index of" "catalina.out"
-
-> site:example.com "index of" error_logs
-
-> site:example.com intitle:"index of" "java.log" | "java.logs"
-
-> site:example.com intext:"token" filetype:log "authenticate"
-
-> site:example.com intitle:index of ./jira-software
-
-> site:example.com intitle:index of "aws/credentials"
-
-> site:example.com intitle:"index of" *.xls
-
-> site:example.com db_password filetype:env
-
-> site:example.com intitle:index of settings.py
-
-> site:example.com inurl:admin filetype:txt
-
-> site:example.com intitle:"index of" ext:sql|xls|xml|json|csv
-
-> site:example.com "MYSQL_ROOT_PASSWORD:" ext:env OR ext:yml -git
-
-> site:example.com inurl:admin filetype:db
-
-> site:example.com inurl:"*admin | login" | inurl:.php | .asp
-
-> filetype:log site:example.com
-
-> inurl:passwd filetype:txt site:example.com
-
-> intitle:"index of /*" site:example.com
-
-> intitle:"index of /" (passwd | password.txt) site:example.com
-
-> intitle:"index of /password" site:example.com
-
-> intitle:"index of /admin" site:example.com
-
-> intitle:"index of /" Parent Directory site:example.com
-
-> site:example.com ext:txt | ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv | ext:mdb
-
-> intitle:"login" "admin" site:example.com
+> site:"example.com" inurl:login | inurl:logon | inurl:sign-in | inurl:signin
 
 > site:example.com inurl:admin | administrator | adm | login | wp-login
 
-> password filetype:docx site:example.com
+### Backup Files
 
-> "index of /" */* site:example.com
+> site:example.com ext:bkf | ext:bkp | ext:bak | ext:old | ext:backup | ext:log
 
-> db_password filetype:env site:example.com
+### Juicy Info
 
-> intext:"index of /.git" "parent directory" site:example.com
+> site:"example.com" ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:swp | ext:old | ext:~ | ext:htpasswd | ext:htaccess | ext:sql | ext:csv | ext:.git-credentials | ext:yaml | ext:yml | ext:ppk | ext:pem | ext:json | ext:cfg | ext:xml | ext:ps1 | ext:reg | ext:inf | ext:rdp | ext:ora | ext:dbf | ext:mdb
 
-> intitle:"index of" "properties.json" site:example.com
-
-> intitle:"index of " "config/db" site:example.com
-
-> site:example.com intitle:index.of
-
-> site:example.com ext:xml | ext:conf | ext:cnf | ext:reg | ext:inf | ext:rdp | ext:cfg | ext:txt | ext:ora | ext:ini
-
-> site:example.com ext:sql | ext:dbf | ext:mdb
-
-> site:example.com inurl:wp- | inurl:wp-content | inurl:plugins | inurl:uploads | inurl:themes | inurl:download
-
-> site:example.com ext:bkf | ext:bkp | ext:bak | ext:old | ext:backup
-
-> site:*.*.example.com
-
-> site:*.example.com
-
-> site:example.com inurl:"/phpinfo.php" | inurl:".htaccess" | inurl:"/.git"  -github
-
-> site:example.com ext:action | ext:struts | ext:do
-
-> site:example.com inurl:readme | inurl:license | inurl:install | inurl:setup | inurl:config
-
-> site:example.com inurl:shell | inurl:backdoor | inurl:wso | inurl:cmd | shadow | passwd | boot.ini | inurl:backdoor
-
-> site:example.com ext:php intitle:phpinfo "published by the PHP Group"
-
-> site:example.com ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv
-
-> inurl:example.com ext:swf
-
-> inurl:"/private" intext:"index of /" "config"  site:example.com
-
-> intitle:"index of" "config.php"  site:example.com
-
-> intext:"index of /" ".ovpn" site:example.com
-
-> intitle:"index of /" "styleci.yml" ".env" site:example.com
-
-> intitle:"index of /" "docker-compose.yml" ".env" site:example.com
-
-> intext:"index of" downloads" site:example.com
-
-> inurl: "phpmyadmin/setup/" site:example.com
-
-> intitle:"index of "conf.json" site:example.com
-
-> site:example.com intext:"sql syntax near"
-
-> site:example.com intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
-
-> site:example.com intext:"sql syntax near" |  intext:"incorrect syntax near"
-
-> intitle:"index of "application.yml" site:example.com
-
-> inurl:adminpanel site:example.com
-
-> intitle:"index of" inurl:admin/php site:example.com
-
-> inurl:"phpmyadmin/setup/" site:example.com
-
-> inurl:ssh intitle:index of /files site:example.com
-
-> intitle:"index of" "database.sql" site:example.com
-
-> intext:"index of" smb.conf site:example.com
-
-> intitle:"index of" inurl:wp-json index.json site:example.com
-
-> intext:"index of" "config" site:example.com
-
-> intitle:"index of /" intext:.db site:example.com
+> allintext:username|password|pass|email filetype:log site:example.com
 
 > intitle:index of "wc.db" site:example.com
 
 > intext:"index of" ".git" site:example.com
 
-> site:example.com intext:login intext:username intext:password
+> site:example.com ext:doc | ext:xlsx | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv | ext:swf intext:password|pass|email|admin|user|offer|employee|order|internal|sensitive
 
-> site:example.com ext:ppt intext:password
+> site:example.com jdbc
 
-> site:example.com filetype:xls inurl:"email.xls"
+> site:example.com intitle:index of
 
-> allintext:username filetype:log site:example.com
+> intitle:"index of /" admin|user|portal|data|config|backup|password|email|employee|upload|uploads|download
 
-> inurl:/proc/self/cwd site:example.com
+> site:example.com inurl:admin/default.aspx
 
-> "index of" "database.sql.zip" site:example.com
+> site:example.com inurl:/wp-includes/uploads
 
-> intitle:"index of" "WebServers.xml" site:example.com
+> site:example.com inurl:/admin ext:config
 
-> filetype:xls inurl:"email.xls" site:example.com
+> site:example.com inurl:wp- | inurl:wp-content | inurl:plugins | inurl:uploads | inurl:themes | inurl:download
 
-> intitle:"Index of" wp-admin site:example.com
+> site:example.com inurl:readme | inurl:license | inurl:install | inurl:setup | inurl:config
 
-> intitle:"index of" "admin/sql/" site:example.com
+> site:example.com inurl:shell | inurl:backdoor | inurl:wso | inurl:cmd | shadow | passwd | boot.ini | inurl:backdoor
 
-> intitle:"index of" "system/config" site:example.com
+> intitle:"index of" "config.php" site:example.com
 
-> site:example.com inurl:admin "@gmail.com"
+> intext:"index of /" ".ovpn" site:example.com
 
-> inurl:zoom.us/j and intext:scheduled for site:example.com
+> intitle:"index of" "database.sql" site:example.com
 
-> allintitle:restricted filetype:doc site:example.com
+### SQL Injection Errors
 
-> inurl:Dashboard.jspa intext:"Atlassian Jira Project Management Software" site:example.com
+> site:example.com intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
 
-> filetype:txt site:example.com
+> intext:"error" | intext:"exception" site:"example.com"
+
+### PHP extension w/ parameters
+
+> site:example.com ext:php | ext: phtm | ext: phtml inurl:?
+
+### Java extension w/ parameters
+
+> site:example.com ext:jsp | ext:do | ext:action | ext:struts inurl:?
+
+### NET extension w/ parameters
+
+> site:example.com ext:aspx | ext:asa | ext:asp | ext:asax inurl:?
+
+### Perl extension
+
+> site:"example.com" ext:pl
+
+### Other extensions
+
+ext:cfm | ext:py | ext:rb
 
 ### App frameworks and their exposures
 
@@ -321,21 +98,57 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com "unexpected error" OR "Uncaught Exception" OR "fatal error" OR "Unknown column" OR "exception occurred"
 
-> site:example.com employee offers 
+> site:example.com employee offers
+
+### XSS prone parameters
+
+> inurl:lang= | inurl:name= | inurl:view= | inurl:name= | inurl:callback= | inurl:id= | inurl:q= | inurl:s= | inurl:keyword= | inurl:search= | inurl:page= | inurl:query= inurl:& site:example.com
+
+### Open Redirect prone parameters
+
+> inurl:page= | inurl:next= | inurl:host= | inurl:go= | inurl:goto= | inurl:file= | inurl:host= | inurl:redirect_to= | inurl:url= | inurl:redirect | inurl:src=http | inurl:r=http | inurl:return= | inurl:next= | inurl:redir= | inurl:http site:example.com
+
+### SQLi Prone Parameters
+
+> inurl:id= | inurl:pid= | inurl:page= | inurl:filter= | inurl:action= | inurl:register= | inurl:dir= | inurl:reg= inurl:& site:example.com
+
+### SSRF Prone Parameters
+
+> inurl:http= | inurl:resource= | inurl:resources= | inurl:url= | inurl:path= | inurl:host= | inurl:proxy= | inurl:html= | inurl:data= | inurl:domain=  | inurl:redirect= inurl:& site:example.com
+
+### LFI Prone Parameters
+
+> inurl:include= | inurl:page= | inurl:dir= | inurl:detail= | inurl:file= | inurl:folder= | inurl:locate= | inurl:doc= | inurl:conf= inurl:& site:example.com
+
+### RCE Prone Parameters
+
+> inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read=  | inurl:ping= inurl:& site:example.com
+
+### High % inurl keywords
+
+> inurl:config | inurl:env | inurl:setting | inurl:backup | inurl:admin | inurl:php site:example.com
+
+### Sensitive Parameters
+
+> inurl:email= | inurl:phone= | inurl:password= | inurl:secret= inurl:& site:example.com
+
+### File Upload
+
+> site:"example.com" "choose file"
 
 ### Code Leaks
 
 > inurl:gitlab "example.com"
 
-> site:http://box.com "example.com"
-
-> inurl:gitlab "example.com"
+> inurl:https://trello.com intext:example.com
 
 > site:atlassian.net "example.com"
 
 > site:atlassian.net inurl:/servicedesk/customer/user/login "example.com"
 
 > site:bitbucket.org "example.com"
+
+> site:bitbucket.org inurl:example.com
 
 > site:codebeautify.org "example.com"
 
@@ -347,9 +160,15 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:coggle.it "example.com"
 
+> site:firebaseio.com "example.com"
+
 > site:gitter.im "example.com"
 
 > site:google.com "example.com"
+
+> site:box.com "example.com"
+
+> site:jfrog.io "example.com"
 
 > site:jsdelivr.net "example.com"
 
@@ -381,8 +200,6 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:zoom.us inurl:"example.com"
 
-> inurl:https://trello.com AND intext:example.com
-
 ### Cloud Storage
 
 > site:s3.amazonaws.com "example.com"
@@ -401,9 +218,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:sharepoint.com "example.com"
 
-> site:s3-external-1.amazonaws.com "example.com"
-
-> site:s3.dualstack.us-east-1.amazonaws.com "example.com"
+> site:amazonaws.com "example.com"
 
 > site:dropbox.com/s "example.com"
 
@@ -413,109 +228,10 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:docs.google.com inurl:"/d/" "example.com"
 
-### XSS prone parameters
+### API DOCS
 
-> inurl:lang= | inurl:name= | inurl:view= | inurl:name= | inurl:callback= | inurl:id= | inurl:q= | inurl:s= | inurl:keyword= | inurl:search= | inurl:page= | inurl:query= inurl:& site:example.com
+> inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api site:"example.com"
 
-### Open Redirect prone parameters
-
-> inurl:page= | inurl:next= | inurl:host= | inurl:go= | inurl:goto= | inurl:file= | inurl:host= | inurl:redirect_to= | inurl:url= | inurl:redirect | inurl:src=http | inurl:r=http | inurl:return= | inurl:next= | inurl:redir= | inurl:http site:*.*.example.com
-
-> inurl:page= | inurl:next= | inurl:host= | inurl:go= | inurl:goto= | inurl:file= | inurl:host= | inurl:redirect_to= | inurl:url= | inurl:redirect | inurl:src=http | inurl:r=http | inurl:return= | inurl:next= | inurl:redir= | inurl:http site:example.com
-
-### SQLi Prone Parameters
-
-> inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= inurl:& site:*.*.example.com
-
-> inurl:id= | inurl:pid= | inurl:category= | inurl:cat= | inurl:action= | inurl:sid= | inurl:dir= inurl:& site:example.com
-
-### SSRF Prone Parameters
-
-> inurl:http | inurl:resource | inurl:resources | inurl:url= | inurl:path= | inurl:dest= | inurl:proxy= | inurl:html= | inurl:data= | inurl:domain=  | inurl:page= inurl:& site:example.com
-
-### LFI Prone Parameters
-
-> inurl:include | inurl:dir | inurl:detail= | inurl:file= | inurl:folder= | inurl:inc= | inurl:locate= | inurl:doc= | inurl:conf= inurl:& site:*.*.example.com
-
-> inurl:include | inurl:dir | inurl:detail= | inurl:file= | inurl:folder= | inurl:inc= | inurl:locate= | inurl:doc= | inurl:conf= inurl:& site:example.com
-
-### RCE Prone Parameters
-
-> inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read=  | inurl:ping= inurl:& site:*.*.example.com
-
-> inurl:cmd | inurl:exec= | inurl:query= | inurl:code= | inurl:do= | inurl:run= | inurl:read=  | inurl:ping= inurl:& site:example.com
-
-### High % inurl keywords
-
-> inurl:config | inurl:env | inurl:setting | inurl:backup | inurl:admin | inurl:php site:*.*.example.com
-
-> inurl:config | inurl:env | inurl:setting | inurl:backup | inurl:admin | inurl:php site:example.com
-
-### Sensitive Parameters
-
-> inurl:email= | inurl:phone= | inurl:password= | inurl:secret= inurl:& site:example.com
-
-# DS
-
-> site:codepad.co "example.com"
-
-> site:scribd.com "example.com"
-
-> site:npmjs.com "example.com"
-
-> site:npm.runkit.com "example.com"
-
-> site:libraries.io "example.com"
-
-> site:ycombinator.com "example.com"
-
-> site:coggle.it "example.com"
-
-> site:papaly.com "example.com"
-
-> site:google.com "example.com"
-
-> site:trello.com "example.com"
-
-> site:prezi.com "example.com"
-
-> site:jsdelivr.net "example.com"
-
-> site:codepen.io "example.com"
-
-> site:codeshare.io "example.com"
-
-> site:sharecode.io "example.com"
-
-> site:pastebin.com "example.com"
-
-> site:repl.it "example.com"
-
-> site:productforums.google.com "example.com"
-
-> site:gitter.im "example.com"
-
-> site:bitbucket.org "example.com"
-
-> site:bitbucket.org inurl:example.com
-
-> site:zoom.us inurl:"example.com"
-
-> site:atlassian.net "example.com"
-
-> site:s3.amazonaws.com intext:example.com
-
-> site:jfrog.io "example.com"
-
-> site:firebaseio.com "example.com"
-
-> inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api-explorer site:"example.com"
-
-> intext:"error" | intext:"exception" | intext:"not found" | intext:"failed" site:"example.com"
-
-> site:"example.com" inurl:login | inurl:logon | inurl:sign-in | inurl:signin | inurl:portal
-
-> site:"example.com" "choose file"
 ---
 
 Medium articles for more dorks:
