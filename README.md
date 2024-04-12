@@ -220,8 +220,6 @@ ext:cfm | ext:py | ext:rb
 
 > site:amazonaws.com "example.com"
 
-> site:dropbox.com/s "example.com"
-
 > inurl:www.dropbox.com/s/ "example.com"
 
 > site:box.com/s "example.com"
