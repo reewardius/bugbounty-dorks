@@ -14,41 +14,43 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com -www -shop
 
-### Login Pages
+### Login Page (User)
 
-> site:example.com inurl:login | inurl:logon | inurl:sign-in | inurl:signin
+> site:example.com inurl:login | inurl:logon | inurl:sign-in | inurl:signin | inurl:wp-login | inurl: weblogin | inurl:loginpanel | inurl:quicklogin | inurl:memberlogin | inurl:forgotpassword
 
-> site:example.com inurl:admin | administrator | adm | login | wp-login
+### Login Page (Admin)
+
+> site:example.com inurl:admin | inurl:administrator | inurl:adm | inurl:wp-admin | inurl:adminlogin
 
 ### Backup Files
 
 > site:example.com ext:bkf | ext:bkp | ext:bak | ext:old | ext:backup | ext:log | ext:sql
 
-> site:example.com intitle:"Index of" ext:sql | ext:sql.gz | ext:sql.rar | ext:sql.zip | ext:bkp | ext:bkp.gz | ext:bkp.rar | ext:bkp.zip
+> site:example.com intitle:"Index of" ext:sql | ext:sql.gz | ext:sql.rar | ext:sql.zip | ext:bkp | ext:bkp.gz | ext:bkp.rar | ext:bkp.zip | ext:zip | ext:7z | ext:rar | ext:gz
 
 ### Juicy Info
 
-> site:example.com ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:swp | ext:old | ext:~ | ext:htpasswd | ext:htaccess | ext:sql | ext:csv | ext:.git-credentials | ext:yaml | ext:yml | ext:ppk | ext:pem | ext:json | ext:cfg | ext:xml | ext:ps1 | ext:reg | ext:inf | ext:rdp | ext:ora | ext:dbf | ext:mdb
+> site:example.com ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:swp | ext:old | ext:~ | ext:htpasswd | ext:htaccess | ext:csv | ext:.git-credentials | ext:yaml | ext:yml | ext:ppk | ext:pem | ext:json | ext:cfg | ext:xml | ext:ps1 | ext:reg | ext:inf | ext:rdp | ext:ora | ext:dbf | ext:mdb
+
+> site:example.com ext:doc | ext:xlsx | ext:docx | ext:dotx | ext:xls | ext:xlsm | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv | ext:swf intext:password|pass|email|admin|user|offer|data|employee|order|internal|sensitive
 
 > allintext:username|password|pass|email filetype:log site:example.com
 
-> inurl:/.env intitle:"Index of" site:example.com
+> site:example.com intitle:"index of /"
 
-> intext:"index of" ".git" site:example.com
+> intitle:"index of /" admin|user|portal|data|config|backup|password|email|employee|upload|uploads|download site:example.com
 
-> intitle:index of "wc.db" site:example.com
+> intitle:"Index of" inurl:/.env site:example.com
+
+> intitle:"Index of" .git site:example.com
+
+> intitle:"Index of" wc.db site:example.com
 
 > intitle:"Index of" .svn site:example.com
 
 > intitle:"Index of" .hg site:example.com
 
-> site:example.com ext:doc | ext:xlsx | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv | ext:swf intext:password|pass|email|admin|user|offer|employee|order|internal|sensitive
-
 > site:example.com jdbc
-
-> site:example.com intitle:"index of /"
-
-> intitle:"index of /" admin|user|portal|data|config|backup|password|email|employee|upload|uploads|download site:example.com
 
 > site:example.com inurl:admin/default.aspx
 
@@ -153,9 +155,9 @@ inurl:id= | inurl:query= | inurl:q= | inurl:name= | inurl:from= | inurl:s= | inu
 
 ### Code Leaks
 
-> inurl:gitlab "example.com"
+> site:gitlab.com "example.com"
 
-> inurl:https://trello.com intext:example.com
+> site:trello.com intext:example.com
 
 > site:atlassian.net "example.com"
 
