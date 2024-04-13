@@ -28,6 +28,10 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com intitle:"Index of" ext:sql | ext:sql.gz | ext:sql.rar | ext:sql.zip | ext:bkp | ext:bkp.gz | ext:bkp.rar | ext:bkp.zip | ext:zip | ext:7z | ext:rar | ext:gz
 
+### API DOCS
+
+> inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:/v1 | inurl:/v2 | inurl:/v3 | inurl:api | inurl:/graphql site:example.com
+
 ### Juicy Info
 
 > site:example.com ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:swp | ext:old | ext:~ | ext:htpasswd | ext:htaccess | ext:csv | ext:.git-credentials | ext:yaml | ext:yml | ext:ppk | ext:pem | ext:json | ext:cfg | ext:xml | ext:ps1 | ext:reg | ext:inf | ext:rdp | ext:ora | ext:dbf | ext:mdb
@@ -242,10 +246,6 @@ inurl:id= | inurl:query= | inurl:q= | inurl:name= | inurl:from= | inurl:s= | inu
 > site:box.com/s "example.com"
 
 > site:docs.google.com inurl:"/d/" "example.com"
-
-### API DOCS
-
-> inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:api site:"example.com"
 
 ---
 
