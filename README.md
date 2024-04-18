@@ -74,6 +74,15 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > intitle:"index of" "database.sql" site:example.com
 
+### Blind XSS (Forms)
+
+> site:example.com intext:"Please choose a request type" | intext:attachments
+> site:example.com intitle:"contact" | intitle:"contactus" | intitle:"submit"
+> site:example.com intitle:"support" | inurl:"contact" | intitle:"survey" | inurl:"survey"
+> site:example.com intitle:support | inurl:support
+> site:example.com inurl:"feedback" | intitle:"feedback"
+> site:example.com inurl:"submit" | intitle:"submit"
+
 ### SQL Injection Errors
 
 > site:example.com intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
