@@ -111,6 +111,8 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### App frameworks and their exposures
 
+> site:example.com inurl:/content/usergenerated | inurl:/content/dam | inurl:/jcr:content | inurl:/libs/granite | inurl:/etc/clientlibs | inurl:/content/geometrixx | inurl:/bin/wcm | inurl:/crx/de
+
 > site:example.com "Whoops! There was an error."
 
 > site:example.com inurl:/frontend_dev.php/$
