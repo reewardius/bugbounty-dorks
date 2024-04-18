@@ -76,12 +76,12 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### Blind XSS (Forms)
 
-> site:example.com intext:"Please choose a request type" | intext:attachments
-> site:example.com intitle:"contact" | intitle:"contactus" | intitle:"submit"
-> site:example.com intitle:"support" | inurl:"contact" | intitle:"survey" | inurl:"survey"
-> site:example.com intitle:support | inurl:support
-> site:example.com inurl:"feedback" | intitle:"feedback"
-> site:example.com inurl:"submit" | intitle:"submit"
+> site:example.com intext:"Please choose a request type" | intext:attachments -pdf -doc -xls
+> site:example.com intitle:"contact" | intitle:"contactus" | intitle:"submit" -pdf -doc -xls
+> site:example.com intitle:"support" | inurl:"contact" | intitle:"survey" | inurl:"survey" -pdf -doc -xls
+> site:example.com intitle:support | inurl:support -pdf -doc -xls
+> site:example.com inurl:"feedback" | intitle:"feedback" -pdf -doc -xls
+> site:example.com inurl:"submit" | intitle:"submit" -pdf -doc -xls
 
 ### SQL Injection Errors
 
