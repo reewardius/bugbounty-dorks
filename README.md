@@ -31,7 +31,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### API DOCS
 
-> inurl:apidocs | inurl:api-docs | inurl:swagger | inurl:/v1 | inurl:/v2 | inurl:/v3 | inurl:api | inurl:/graphql site:example.com
+> site:example.com inurl:api | site:*/rest | site:*/v1 | site:*/v2 | site:*/v3 | inurl:swagger | inurl:graphql | inurl:graphiql
 
 ### Juicy Info
 
@@ -39,27 +39,17 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com ext:doc | ext:xlsx | ext:docx | ext:dotx | ext:xls | ext:xlsm | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv | ext:swf intext:password|pass|email|admin|user|offer|data|employee|order|internal|sensitive
 
-> allintext:username|password|pass|email filetype:log site:example.com
+> site:example.com allintext:username|password|pass|email filetype:log
 
 > site:example.com intitle:"index of /"
 
-> intitle:"index of /" admin|user|portal|data|config|backup|password|email|employee|upload|uploads|download site:example.com
+> site:example.com intitle:"index of /" admin|user|portal|data|config|backup|password|email|employee|upload|uploads|download
 
-> intitle:"Index of" inurl:/.env site:example.com
-
-> intitle:"Index of" .git site:example.com
-
-> intitle:"Index of" wc.db site:example.com
-
-> intitle:"Index of" .svn site:example.com
-
-> intitle:"Index of" .hg site:example.com
+> site:example.com intitle:"Index of" .env | .git | wc.db | .svn | .hg | .ovpn | config.php | database.sql
 
 > site:example.com jdbc
 
-> site:example.com inurl:admin/default.aspx
-
-> site:example.com inurl:/wp-includes/uploads
+> site:example.com inurl:admin/default.aspx | inurl:/wp-includes/uploads
 
 > site:example.com inurl:/admin ext:config
 
@@ -68,12 +58,6 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 > site:example.com inurl:readme | inurl:license | inurl:install | inurl:setup | inurl:config
 
 > site:example.com inurl:shell | inurl:backdoor | inurl:wso | inurl:cmd | shadow | passwd | boot.ini | inurl:backdoor
-
-> intitle:"index of" "config.php" site:example.com
-
-> intext:"index of /" ".ovpn" site:example.com
-
-> intitle:"index of" "database.sql" site:example.com
 
 ### Blind XSS (Forms)
 
@@ -108,7 +92,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### Other extensions
 
-> ext:cfm | ext:py | ext:rb | ext:js site:example.com
+> site:example.com ext:cfm | ext:py | ext:rb | ext:js
 
 ### App frameworks and their exposures
 
@@ -118,9 +102,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com inurl:/frontend_dev.php/$
 
-> inurl:/app/config/ intitle:"Index of" site:example.com
-
-> inurl:/settings.py intitle:"Index of" site:example.com
+> site:example.com inurl:/app/config/ | inurl:/settings.py intitle:"Index of"
 
 > site:example.com "SF_ROOT_DIR"
 
@@ -166,8 +148,8 @@ inurl:id= | inurl:query= | inurl:q= | inurl:name= | inurl:from= | inurl:s= | inu
 
 > site:"example.com" "choose file"
 > site:example.com "file upload"
-> intitle:"file upload" (inurl:upload.php | inurl:upload.asp  | inurl:upload.aspx | inurl:upload.jsp | inurl:upload.do | inurl:upload.action) site:example.com
-> intitle:"index of" "upload" -html -htm site:example.com
+> site:example.com intitle:"file upload" (inurl:upload.php | inurl:upload.asp  | inurl:upload.aspx | inurl:upload.jsp | inurl:upload.do | inurl:upload.action)
+> site:example.com intitle:"index of" "upload" -html -htm
 
 ### Code Leaks
 
