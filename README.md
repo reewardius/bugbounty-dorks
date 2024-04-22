@@ -17,7 +17,8 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 ### Login Page (User)
 
 > site:example.com inurl:login | inurl:logon | inurl:sign-in | inurl:signin | inurl:wp-login | inurl: weblogin | inurl:loginpanel | inurl:quicklogin | inurl:memberlogin | inurl:forgotpassword | inurl:forgot-password | intitle:login | intitle:signin | intitle:sign-in | inurl:panel
-> inurl:login | inurl:signin Google
+
+> site:example.com inurl:login | inurl:signin Google
 
 ### Login Page (Admin)
 
@@ -64,10 +65,15 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 ### Blind XSS (Forms)
 
 > site:example.com intext:"Please choose a request type" | intext:attachments -pdf -doc -xls
+
 > site:example.com intitle:"contact" | intitle:"contactus" | intitle:"submit" -pdf -doc -xls
+
 > site:example.com intitle:"support" | inurl:"contact" | intitle:"survey" | inurl:"survey" -pdf -doc -xls
+
 > site:example.com intitle:support | inurl:support -pdf -doc -xls
+
 > site:example.com inurl:"feedback" | intitle:"feedback" -pdf -doc -xls
+
 > site:example.com inurl:"submit" | intitle:"submit" -pdf -doc -xls
 
 ### SQL Injection Errors
