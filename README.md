@@ -130,7 +130,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### SQLi Prone Parameters
 
-inurl:id= | inurl:query= | inurl:q= | inurl:name= | inurl:from= | inurl:s= | inurl:search= | inurl:page= | inurl:filter= | inurl:action= | inurl:sort= | inurl:dir= | inurl:reg= | inurl:order= | inurl:update= | inurl:delete= | inurl:create= inurl:& site:example.com
+> inurl:id= | inurl:query= | inurl:q= | inurl:name= | inurl:from= | inurl:s= | inurl:search= | inurl:page= | inurl:filter= | inurl:action= | inurl:sort= | inurl:dir= | inurl:reg= | inurl:order= | inurl:update= | inurl:delete= | inurl:create= inurl:& site:example.com
 
 ### SSRF Prone Parameters
 
