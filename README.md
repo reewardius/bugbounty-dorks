@@ -16,7 +16,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### Server Errors
 
-site:example.com inurl:"error" | intitle:"exception" | intitle:"failure" | intitle:"server at" | inurl:exception | "database error" | "SQL syntax" | "undefined index" | "unhandled exception" | "stack trace"
+> site:example.com inurl:"error" | intitle:"exception" | intitle:"failure" | intitle:"server at" | inurl:exception | "database error" | "SQL syntax" | "undefined index" | "unhandled exception" | "stack trace"
 
 ### Login Page (User)
 
