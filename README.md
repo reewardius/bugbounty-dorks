@@ -86,15 +86,15 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### PHP extension w/ parameters
 
-> site:example.com ext:php | ext: phtm | ext: phtml inurl:?
+> site:example.com ext:php | ext:phtm | ext:phtml
 
 ### Java extension w/ parameters
 
-> site:example.com ext:jsp | ext:do | ext:action | ext:struts | ext:java | ext:class | ext:jar | ext:war | ext:ear inurl:?
+> site:example.com ext:jsp | ext:do | ext:action | ext:struts | ext:java | ext:class | ext:jar | ext:war | ext:ear
 
 ### NET extension w/ parameters
 
-> site:example.com ext:aspx | ext:asa | ext:asp | ext:asax inurl:?
+> site:example.com ext:aspx | ext:asa | ext:asp | ext:asax
 
 ### Perl extension
 
