@@ -78,12 +78,6 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com inurl:"submit" | intitle:"submit" -pdf -doc -xls
 
-### SQL Injection Errors
-
-> site:example.com intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
-
-> site:example.com inurl:"error" | intext:"error" | intitle:"exception" | intitle:"failure" | intitle:"server at" | inurl:exception | "database error" | "SQL syntax" | "undefined index" | "unhandled exception" | "stack trace"
-
 ### PHP extension w/ parameters
 
 > site:example.com ext:php | ext:phtm | ext:phtml
