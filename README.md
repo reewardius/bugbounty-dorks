@@ -12,7 +12,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 ---
 ### Broad domain search w/ negative search
 
-> site:example.com -www -shop
+> site:example.com -www
 
 ### Login Page (User)
 
@@ -23,6 +23,12 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 ### Login Page (Admin)
 
 > site:example.com inurl:admin | inurl:administrator | inurl:adm | inurl:wp-admin | inurl:adminlogin | inurl:admin-login
+
+### SQL Injection Errors
+
+> site:example.com intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"
+
+> site:example.com inurl:"error" | intext:"error" | intitle:"exception" | intitle:"failure" | intitle:"server at" | inurl:exception | intext:"database error" | intext:"SQL syntax" | intext:"undefined index" | intext:"unhandled exception" | intext:"stack trace"
 
 ### Backup Files
 
