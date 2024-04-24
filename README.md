@@ -70,17 +70,15 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### Blind XSS (Forms)
 
-> site:example.com intext:"Please choose a request type" | intext:attachments -pdf -doc -xls
+> site:example.com intext:"Please choose a request type" | intext:attachments -pdf -doc -docx -xls
 
-> site:example.com intitle:"contact" | intitle:"contactus" | intitle:"submit" -pdf -doc -xls
+> site:example.com intitle:"contact" | intitle:"contactus" | intitle:"submit" -pdf -doc -docx -xls
 
-> site:example.com intitle:"support" | inurl:"contact" | intitle:"survey" | inurl:"survey" -pdf -doc -xls
+> site:example.com intitle:"support" | inurl:support | inurl:"contact" | intitle:"survey" | inurl:"survey" -pdf -doc -docx -xls
 
-> site:example.com intitle:support | inurl:support -pdf -doc -xls
+> site:example.com inurl:"feedback" | intitle:"feedback" -pdf -doc -docx -xls
 
-> site:example.com inurl:"feedback" | intitle:"feedback" -pdf -doc -xls
-
-> site:example.com inurl:"submit" | intitle:"submit" -pdf -doc -xls
+> site:example.com inurl:"submit" | intitle:"submit" -pdf -doc -docx -xls
 
 ### PHP extension w/ parameters
 
