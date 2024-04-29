@@ -46,9 +46,9 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com ext:doc | ext:xlsx | ext:docx | ext:dotx | ext:xls | ext:xlsm | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv | ext:swf intext:password|pass|email|admin|user|offer|data|employee|order|internal|sensitive
 
-> site:example.com allintext:"confidential" | allintext:"Not for Public Release" | allintext:"internal use only" | allintext:"do not distribute"
+> site:example.com allintext:confidential|"Not for Public Release"|"internal use only"|"do not distribute"
 
-> site:example.com allintext:username|password|pass|email filetype:log
+> site:example.com allintext:username|password|pass|email|confidential filetype:log
 
 > site:example.com intitle:"index of /"
 
