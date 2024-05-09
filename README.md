@@ -155,7 +155,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:gitlab.com "example.com"
 
-> site:trello.com intext:example.com
+> site:trello.com "example.com"
 
 > site:atlassian.net "example.com"
 
