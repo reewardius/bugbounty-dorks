@@ -36,7 +36,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### API DOCS
 
-> site:example.com inurl:api | site:*/rest | site:*/v1 | site:*/v2 | site:*/v3 | inurl:swagger | inurl:graphql | inurl:graphiql
+> site:example.com inurl:api | inurl:*/rest | inurl:*/v1 | inurl:*/v2 | inurl:*/v3 | inurl:swagger | inurl:graphql | inurl:graphiql
 
 ### Juicy Info
 
