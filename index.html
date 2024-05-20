@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -213,13 +212,13 @@
                 const intextPattern = /intext:"example\.com"/gi;
                 if (intextPattern.test(originalDork)) {
                     const joinedDomains = domains.map(d => `intext:"${d}"`).join(" | ");
-                    updatedDork = originalDork.replace(intextPattern, joinedDomains);
+                    originalDork = originalDork.replace(intextPattern, joinedDomains);
                 }
+
                 // Update intext:"" for all domains after the first
                 if (originalDork.includes('intext:"')) {
-                    const joinedDomains = domains.map((d, idx) => idx === 0 ? `intext:"${d}"` : `intext:"${d}"`).join(" | ");
-                    originalDork = originalDork.replace(/intext:"([^"]+)"/gi, joinedDomains);
-                    originalDork = originalDork.replace(/ \| "([^"]+)"/gi, " | ");
+                    const updatedIntexts = domains.map((d) => `intext:"${d}"`).join(" | ");
+                    originalDork = originalDork.replace(/intext:"[^"]+"/gi, updatedIntexts);
                 }
 
                 const updatedLink = `https://www.google.com/search?q=${encodeURIComponent(originalDork)}`;
