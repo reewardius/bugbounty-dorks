@@ -146,10 +146,10 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 ### File Upload
 
-> site:"example.com" & intext:"choose file"
-> site:example.com "file upload"
-> site:example.com intitle:"file upload" (inurl:upload.php | inurl:upload.asp  | inurl:upload.aspx | inurl:upload.jsp | inurl:upload.do | inurl:upload.action)
-> site:example.com intitle:"index of" "upload" -html -htm
+> site:example.com & intext:"choose file"
+> site:example.com intext:"file upload"
+> site:example.com (inurl:upload.php | inurl:upload.asp  | inurl:upload.aspx | inurl:upload.jsp | inurl:upload.do | inurl:upload.action)
+> site:example.com intitle:"index of" "upload"
 
 ### Code Leaks
 
