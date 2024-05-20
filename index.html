@@ -204,10 +204,6 @@
                 } else if (/["']example\[?\.\]?com["']/i.test(originalDork)) {
                     const joinedDomains = domains.map(d => `"${d}"`).join(" | ");
                     originalDork = originalDork.replace(/["']example\[?\.\]?com["']/gi, joinedDomains);
-                } else {
-                    // Ensure intext patterns are not altered
-                    const updatedDork = originalDork.replace(/intext:"example\.com"/gi, 'intext:"example.com"');
-                    originalDork = updatedDork;
                 }
 
                 const updatedLink = `https://www.google.com/search?q=${encodeURIComponent(originalDork)}`;
