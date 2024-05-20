@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,12 +77,12 @@
         }
         .hidden { display: none; }
         #tooltip {
-        position: absolute;
-        background-color: black;
-        color: white;
-        padding: 5px;
-        border-radius: 5px;
-    }
+            position: absolute;
+            background-color: black;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -91,71 +90,72 @@
     <p>
         <a href="https://twitter.com/reewardius" target="_blank">
             <img src="https://img.shields.io/twitter/url/https/twitter.com/TakSec.svg?style=social&label=Follow%20%40reewardius" alt="Twitter Follow Badge">
+        </a>
         <a href="https://github.com/reewardius/bugbounty-dorks/" target="_blank">GitHub Repo</a>
-        </a><br><br>
+        <br><br>
     </p>
     <label for="domainInput">Enter a domain:</label>
-    <input type="text" id="domainInput" placeholder="example.com" oninput="updateDomain()">
+    <input type="text" id="domainInput" placeholder="example.com">
     <div id="tooltip" class="hidden">For multiple domains, separate by comma. e.g., example1.com, example2.com</div>
-
     <ul id="dorkList"></ul>
     <section>
         <h2>Additional Resources</h2>
         <ul class="link-list">
             <li><a href="https://github.com/reewardius/bugbounty-dorks/" target="_blank">Google Dorks For Bug Bounty</a></li>
-            <li><a href="https://freedium.cfd/https://thegrayarea.tech/5-google-dorks-every-hacker-needs-to-know-fed21022a906" target="_blank">5 Google Dorks Every Hacker Needs to Know</a></li>
-            <li><a href="https://freedium.cfd/https://infosecwriteups.com/uncover-hidden-gems-in-the-cloud-with-google-dorks-8621e56a329d" target="_blank">Uncover Hidden Gems in the Cloud with Google Dorks</a></li>
-            <li><a href="https://freedium.cfd/https://infosecwriteups.com/10-google-dorks-for-sensitive-data-9454b09edc12" target="_blank">10 Google Dorks for Sensitive Data</a></li>
+            <li><a href="https://thegrayarea.tech/5-google-dorks-every-hacker-needs-to-know-fed21022a906" target="_blank">5 Google Dorks Every Hacker Needs to Know</a></li>
+            <li><a href="https://infosecwriteups.com/uncover-hidden-gems-in-the-cloud-with-google-dorks-8621e56a329d" target="_blank">Uncover Hidden Gems in the Cloud with Google Dorks</a></li>
+            <li><a href="https://infosecwriteups.com/10-google-dorks-for-sensitive-data-9454b09edc12" target="_blank">10 Google Dorks for Sensitive Data</a></li>
         </ul>
     </section>
     <script>
-    const domainInput = document.getElementById('domainInput');
-    const tooltip = document.getElementById('tooltip');
+        const domainInput = document.getElementById('domainInput');
+        const tooltip = document.getElementById('tooltip');
 
-    domainInput.addEventListener('mouseover', function() {
-        tooltip.style.display = 'block';
-        tooltip.style.left = domainInput.offsetLeft + 'px';
-        tooltip.style.top = (domainInput.offsetTop + domainInput.offsetHeight + 5) + 'px';
-    });
+        domainInput.addEventListener('mouseover', function() {
+            tooltip.style.display = 'block';
+            tooltip.style.left = domainInput.offsetLeft + 'px';
+            tooltip.style.top = (domainInput.offsetTop + domainInput.offsetHeight + 5) + 'px';
+        });
 
-    domainInput.addEventListener('mouseout', function() {
-        tooltip.style.display = 'none';
-    });
-    
-    let originalDorks = [];
-    let stopAppending = false;  // Flag to stop appending new dorks
+        domainInput.addEventListener('mouseout', function() {
+            tooltip.style.display = 'none';
+        });
 
-    async function fetchDorks() {
-        const url = "https://raw.githubusercontent.com/reewardius/bugbounty-dorks/main/README.md";
-        const response = await fetch(url);
-        const text = await response.text();
+        domainInput.addEventListener('input', updateDomain);
 
-        const dorkList = document.getElementById("dorkList");
-        const regex = /(?:^### (.+)|^> (.+))/gm;
-        let match;
-        let title = '';
-        let firstDork = true;
+        let originalDorks = [];
+        let stopAppending = false;
 
-        while ((match = regex.exec(text)) !== null) {
-            if (match[1]) {
-                // Title match
-                title = match[1];
-                if (title === "Dorks that work better w/o domain") {
-                    stopAppending = true;  // Set the flag to stop appending when this title is encountered
+        async function fetchDorks() {
+            const url = "https://raw.githubusercontent.com/reewardius/bugbounty-dorks/main/README.md";
+            const response = await fetch(url);
+            const text = await response.text();
+
+            const dorkList = document.getElementById("dorkList");
+            const regex = /(?:^### (.+)|^> (.+))/gm;
+            let match;
+            let title = '';
+            let firstDork = true;
+
+            while ((match = regex.exec(text)) !== null) {
+                if (match[1]) {
+                    title = match[1];
+                    if (title === "Dorks that work better w/o domain") {
+                        stopAppending = true;
+                    }
+                } else if (match[2] && !stopAppending) {
+                    if (firstDork) {
+                        firstDork = false;
+                        continue;
+                    }
+                    const dork = match[2];
+                    originalDorks.push(dork);
+                    const listItem = createDorkListItem(dork, title);
+                    dorkList.appendChild(listItem);
                 }
-            } else if (match[2] && !stopAppending) {
-                // Dork match
-                if (firstDork) {
-                    firstDork = false;
-                    continue;
-                }
-                const dork = match[2];
-                originalDorks.push(dork);
-                const listItem = createDorkListItem(dork, title);
-                dorkList.appendChild(listItem);
             }
         }
-    }
+
         let prevTitle = '';
 
         function createDorkListItem(dork, description) {
@@ -183,51 +183,35 @@
         }
 
         function updateDomain() {
-            const domainInput = document.getElementById("domainInput");
             const domains = domainInput.value.split(",").map(domain => domain.trim());
-        
+
             if (domains.length === 0) return;
-        
+
             const dorkLinks = document.querySelectorAll(".dorkLink");
             dorkLinks.forEach((link, index) => {
                 let originalDork = originalDorks[index];
-                
-                // Check if the dork is related to Drupal and skip modification
-                if (originalDork.includes("Drupal")) {
-                    return; // Skip any modification if it's a Drupal related dork
+
+                if (originalDork.includes('intext:')) {
+                    link.textContent = originalDork;
+                    return;
                 }
 
-                // For site:example.com
+                let updatedDork = originalDork;
                 if (/site:"?example\[?\.\]?com"?/i.test(originalDork)) {
                     const joinedDomains = domains.map(d => `site:${d}`).join(" | ");
-                    originalDork = originalDork.replace(/site:"?example\[?\.\]?com"?/gi, joinedDomains);
-                }
-                
-                // For "example.com"
-                else if (/["']example\[?\.\]?com["']/i.test(originalDork)) {
+                    updatedDork = originalDork.replace(/site:"?example\[?\.\]?com"?/gi, joinedDomains);
+                } else if (/["']example\[?\.\]?com["']/i.test(originalDork)) {
                     const joinedDomains = domains.map(d => `"${d}"`).join(" | ");
-                    originalDork = originalDork.replace(/["']example\[?\.\]?com["']/gi, joinedDomains);
-                }
-                
-                // For intext:"example.com" and similar patterns
-                const intextPattern = /intext:"example\.com"/gi;
-                if (intextPattern.test(originalDork)) {
-                    const joinedDomains = domains.map(d => `intext:"${d}"`).join(" | ");
-                    updatedDork = originalDork.replace(intextPattern, joinedDomains);
-                }
-                // Update intext:"" for all domains after the first
-                if (originalDork.includes('intext:"')) {
-                    const joinedDomains = domains.map((d, idx) => idx === 0 ? `intext:"${d}"` : `intext:"${d}"`).join(" | ");
-                    originalDork = originalDork.replace(/intext:"([^"]+)"/gi, joinedDomains);
-                    originalDork = originalDork.replace(/ \| "([^"]+)"/gi, " | ");
+                    updatedDork = originalDork.replace(/["']example\[?\.\]?com["']/gi, joinedDomains);
                 }
 
-                const updatedLink = `https://www.google.com/search?q=${encodeURIComponent(originalDork)}`;
-            
-                link.textContent = originalDork;
+                const updatedLink = `https://www.google.com/search?q=${encodeURIComponent(updatedDork)}`;
+
+                link.textContent = updatedDork;
                 link.href = updatedLink;
             });
         }
+
         fetchDorks();
     </script>
 </body>
