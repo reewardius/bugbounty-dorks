@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,14 +75,16 @@
         ul.link-list li {
             margin-bottom: 10px;
         }
-        .hidden { display: none; }
+        .hidden {
+            display: none;
+        }
         #tooltip {
-        position: absolute;
-        background-color: black;
-        color: white;
-        padding: 5px;
-        border-radius: 5px;
-    }
+            position: absolute;
+            background-color: black;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -183,7 +184,6 @@
         }
 
         function updateDomain() {
-            const domainInput = document.getElementById("domainInput");
             const domains = domainInput.value.split(",").map(domain => domain.trim());
         
             if (domains.length === 0) return;
@@ -201,25 +201,13 @@
                 if (/site:"?example\[?\.\]?com"?/i.test(originalDork)) {
                     const joinedDomains = domains.map(d => `site:${d}`).join(" | ");
                     originalDork = originalDork.replace(/site:"?example\[?\.\]?com"?/gi, joinedDomains);
-                }
-                
-                // For "example.com"
-                else if (/["']example\[?\.\]?com["']/i.test(originalDork)) {
+                } else if (/["']example\[?\.\]?com["']/i.test(originalDork)) {
                     const joinedDomains = domains.map(d => `"${d}"`).join(" | ");
                     originalDork = originalDork.replace(/["']example\[?\.\]?com["']/gi, joinedDomains);
-                }
-                
-                // For intext:"example.com" and similar patterns
-                const intextPattern = /intext:"example\.com"/gi;
-                if (intextPattern.test(originalDork)) {
-                    const joinedDomains = domains.map(d => `intext:"${d}"`).join(" | ");
-                    updatedDork = originalDork.replace(intextPattern, joinedDomains);
-                }
-                // Update intext:"" for all domains after the first
-                if (originalDork.includes('intext:"')) {
-                    const joinedDomains = domains.map((d, idx) => idx === 0 ? `intext:"${d}"` : `intext:"${d}"`).join(" | ");
-                    originalDork = originalDork.replace(/intext:"([^"]+)"/gi, joinedDomains);
-                    originalDork = originalDork.replace(/ \| "([^"]+)"/gi, " | ");
+                } else {
+                    // Ensure intext patterns are not altered
+                    const updatedDork = originalDork.replace(/intext:"example\.com"/gi, 'intext:"example.com"');
+                    originalDork = updatedDork;
                 }
 
                 const updatedLink = `https://www.google.com/search?q=${encodeURIComponent(originalDork)}`;
