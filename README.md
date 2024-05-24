@@ -108,9 +108,7 @@ A list of Google Dorks for Bug Bounty, Web Application Security, and Pentesting
 
 > site:example.com Application Trace + nil:NilClass (10%) TBD
 
-> site:example.com "unexpected error" OR "Uncaught Exception" OR "fatal error" OR "Unknown column" OR "exception occurred"
-
-> site:example.com employee offers
+> site:example.com "unexpected error" | "Uncaught Exception" | "fatal error" | "Unknown column" | "exception occurred"
 
 ### XSS prone parameters
 
